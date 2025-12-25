@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  name         String
+  email        String        @unique
+  password     String
+  role         UserRole      @default(student)
+  index_number String?
+  level        String?
+  phone        String?
+  status       String        @default("active")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  studentDues  StudentDue[]
+  payments     Payment[]
+
+  @@map("users")
+}
+
+model Due {
+  id            Int           @id @default(autoincrement())
+  title         String
+  amount        Float
+  level         String
+  academic_year String        @map("academic_year")
+  description   String?
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime      @updatedAt @map("updated_at")
+  studentDues   StudentDue[]
+
+  @@map("dues")
+}
+
+model StudentDue {
+  id          Int      @id @default(autoincrement())
+  student_id  Int
+  due_id      Int
+  amount_paid Float    @default(0)
+  balance     Float
+  status      Status   @default(NotPaid)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  student     User     @relation(fields: [student_id], references: [id])
+  due         Due      @relation(fields: [due_id], references: [id])
+  payments    Payment[]
+
+  @@map("student_dues")
+}
+
+model Payment {
+  id             Int         @id @default(autoincrement())
+  student_id     Int
+  student_due_id Int
+  amount         Float
+  payment_method String
+  reference     String
+  status        String
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+  student       User        @relation(fields: [student_id], references: [id])
+  studentDue    StudentDue  @relation(fields: [student_due_id], references: [id])
+
+  @@map("payments")
+}
+
+enum UserRole {
+  admin
+  student
+  hod
+}
+
+enum Status {
+  NotPaid
+  Partial
+  Paid
+}
