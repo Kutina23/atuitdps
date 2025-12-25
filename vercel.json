@@ -23,8 +23,5 @@
       "dest": "/client/dist/$1",
       "continue": true
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/client/dist/index.html" }
   ]
 }
