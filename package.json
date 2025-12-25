@@ -1,6 +1,22 @@
 {
+  "name": "department-management",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm start",
+    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\""
+  },
   "devDependencies": {
     "@types/node": "^25.0.3",
+    "concurrently": "^8.2.2",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
