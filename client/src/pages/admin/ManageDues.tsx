@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FiPlus } from "react-icons/fi";
-import axios from "axios";
+// Removed unused axios import
 import { useAuth } from "../../context/AuthContext";
 
 interface Due {

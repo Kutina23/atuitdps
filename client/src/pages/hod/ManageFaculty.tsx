@@ -40,10 +40,6 @@ interface FacultyFormData {
   isActive: boolean;
 }
 
-interface FacultyImageFile {
-  file: File | null;
-}
-
 export default function ManageFaculty() {
   const [facultyMembers, setFacultyMembers] = useState<FacultyMember[]>([]);
   const [loading, setLoading] = useState(true);

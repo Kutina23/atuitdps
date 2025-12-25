@@ -140,7 +140,7 @@ export default function Faculty() {
             </div>
           ) : (
             <div className="grid-responsive">
-              {facultyMembers.map((member, idx) => (
+              {facultyMembers.map((member) => (
                 <div
                   key={member.id}
                   className="enhanced-card"

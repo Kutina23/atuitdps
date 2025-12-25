@@ -102,7 +102,7 @@ export default function Sidebar({
         {/* Navigation */}
         <nav className="flex-1 flex flex-col justify-evenly px-4 py-6">
           <div className="flex flex-col justify-evenly flex-1">
-            {menuItems.map((item, index) => {
+            {menuItems.map((item) => {
               const isActive = location.pathname === `${basePath}${item.path}`;
               return (
                 <Link

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../context/AuthContext";
 
 interface Event {
   id: number;
@@ -28,7 +27,7 @@ interface Partner {
 }
 
 export default function HomePage() {
-  const { api } = useAuth();
+  // User authentication state not currently used
   const [events, setEvents] = useState<Event[]>([]);
   const [programs, setPrograms] = useState<Program[]>([]);
   const [partners, setPartners] = useState<Partner[]>([]);

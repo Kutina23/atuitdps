@@ -8,7 +8,7 @@ import {
   FiEye,
   FiTrendingUp,
 } from "react-icons/fi";
-import axios from "axios";
+// Removed unused axios import
 import DataTable from "../../components/DataTable";
 import { useAuth } from "../../context/AuthContext";
 

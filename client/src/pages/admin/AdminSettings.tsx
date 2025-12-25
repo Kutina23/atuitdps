@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import {
-  FiSettings,
-  FiUser,
-  FiMail,
   FiLock,
   FiSave,
   FiEye,
   FiEyeOff,
+  FiUser
 } from "react-icons/fi";
 import { useAuth } from "../../context/AuthContext";
 

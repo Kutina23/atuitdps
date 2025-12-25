@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiUsers, FiDollarSign, FiCheckCircle, FiClock } from "react-icons/fi";
-import axios from "axios";
+// Removed unused axios import
 import { useAuth } from "../../context/AuthContext";
 
 export default function AdminHome() {

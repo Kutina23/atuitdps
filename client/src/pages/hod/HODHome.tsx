@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// Removed unused useNavigate import
 import { FiUsers, FiDollarSign, FiCheckCircle, FiClock } from "react-icons/fi";
 import { useAuth } from "../../context/AuthContext";
 

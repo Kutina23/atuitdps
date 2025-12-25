@@ -1,15 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import {
-  FiPlus,
-  FiEdit,
-  FiTrash2,
-  FiSearch,
-  FiUser,
-  FiHash,
-  FiMail,
-  FiPhone,
-} from "react-icons/fi";
-import axios from "axios";
+import { FiTrash2, FiPlus, FiUser, FiMail, FiPhone, FiEdit, FiHash } from "react-icons/fi";
 import DataTable from "../../components/DataTable";
 import { useAuth } from "../../context/AuthContext";
 
@@ -274,7 +264,7 @@ export default function ManageStudents() {
     {
       key: "actions",
       title: "Actions",
-      render: (value: any, record: Student) => (
+      render: (_value: any, record: Student) => (
         <div className="flex gap-1">
           <button
             onClick={() => handleEdit(record)}

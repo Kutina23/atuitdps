@@ -23,7 +23,7 @@ interface HODProfile {
 export default function HODSettings() {
   const { api } = useAuth();
   const [saving, setSaving] = useState(false);
-  const [profile, setProfile] = useState<HODProfile | null>(null);
+  const [, setProfile] = useState<HODProfile | null>(null);
   const [profileData, setProfileData] = useState({
     name: "",
     email: "",

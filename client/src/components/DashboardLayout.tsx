@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Routes, Route } from "react-router-dom";
+// Removed unused imports
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import Sidebar from "./Sidebar";
